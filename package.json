@@ -1,9 +1,13 @@
 {
 	"name": "daily-reminder",
-	"repository": "https://github.com/piaoyidage/daily-reminder.git",
+	"homepage": "https://github.com/piaoyidage/daily-reminder/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/piaoyidage/daily-reminder.git"
+	},
 	"displayName": "Daily Reminder",
 	"description": "Remind you to do something",
-	"version": "0.0.5",
+	"version": "0.0.7",
 	"publisher": "huge",
 	"engines": {
 		"vscode": "^1.31.0"
