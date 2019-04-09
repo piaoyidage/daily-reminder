@@ -1,0 +1,74 @@
+{
+	"name": "daily-reminder",
+	"displayName": "Daily Reminder",
+	"description": "Remind you to do something",
+	"version": "0.0.5",
+	"publisher": "huge",
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.dailyReminder"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.dailyReminder",
+				"title": "Daily Reminder"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "remind me configuration",
+			"properties": {
+				"remind.defaultTip": {
+					"type": "string",
+					"default": "你今天打卡了吗？",
+					"description": "Set default tip"
+				},
+				"remind.onDuty": {
+					"type": "string",
+					"default": "09:50",
+					"description": "set on duty time"
+				},
+				"remind.onDutyTip": {
+					"type": "string",
+					"default": "你上班打卡了吗？",
+					"description": "set on duty tip"
+				},
+				"remind.offDuty": {
+					"type": "string",
+					"default": "19:00",
+					"description": "set off duty time"
+				},
+				"remind.offDutyTip": {
+					"type": "string",
+					"default": "你下班打卡了吗？",
+					"description": "set off duty tip"
+				}
+			}
+		},
+		"keybindings": [
+			{
+				"command": "extension.dailyReminder",
+				"key": "ctrl+shift+1",
+				"mac": "ctrl+shift+1"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"eslint": "^4.11.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	}
+}
