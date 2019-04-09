@@ -23,13 +23,15 @@ function activate(context) {
 		// 获取 package.josn 里面的配置
 		const { onDuty, offDuty, onDutyTip, offDutyTip, defaultTip } = vscode.workspace.getConfiguration('remind')
 		const [ onDutyHour, onDutyMinute ] = onDuty.split(':')
-		const [ offDutyHour, offDutyMinute ] = offDuty.split(':')
+        const [ offDutyHour, offDutyMinute ] = offDuty.split(':')
+        
 		// 简单校验一下配置的时间符不符合格式
 		const regTime = /^([01][0-9]|2[0-3]):([0-5][0-9])$/
 		// 格式化 Date 获取的小时和分钟
-		const format = (num, len = 2) => `0${num}`.slice(-len)
+        const format = (num, len = 2) => `0${num}`.slice(-len)
+        
 		const showTip = () => {
-			const date = new Date()
+		    const date = new Date()
 			const curHour = format(date.getHours())
 			const curMinute = format(date.getMinutes())
 			if (onDutyHour === curHour && onDutyMinute === curMinute) {
@@ -37,7 +39,8 @@ function activate(context) {
 			} else if (offDutyHour === curHour && offDutyMinute === curMinute) {
 				vscode.window.showWarningMessage(offDutyTip)
 			}
-		}
+        }
+        
 		if (regTime.test(onDuty) && regTime.test(offDuty)) {
 			if (timer) {
 				clearInterval(timer)
