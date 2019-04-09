@@ -2,16 +2,17 @@
 
 每日提醒，设置每天的提醒时间和提醒内容。
 
+
 ## Extension Settings
 
-* `remind.onDuty`: set on duty time
-* `remind.onDutyTip`: set on duty tip
-* `remind.offDuty`: set off duty time
-* `remind.offDutyTip`: set off duty tip
-* `remind.defaultTip`: set default tip
+* `remind.onDuty`: 设置上班时间
+* `remind.onDutyTip`: 设置上班提醒
+* `remind.offDuty`: 设置下班时间
+* `remind.offDutyTip`: 设置下班提醒
+* `remind.defaultTip`: 启动插件提醒
 
 ## Usages
 
-use shortcut ctrl+shift+1
+快捷键 ctrl+shift+1 启动插件
 
 **Enjoy!**
